@@ -26,10 +26,12 @@ Make sure you have the following installed:
 ### Installation
 
 1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/your-username/blutech-project.git
-   cd blutech-project
-   ```
+
+```sh
+  git clone https://github.com/your-username/blutech-project.git
+  cd blutech-project
+```
+
 2. **Install dependencies**:
 
 ```sh
@@ -58,13 +60,69 @@ blutech-project/
 ├── src/
 │   ├── components/
 │   ├── contexts/
-│   ├── hooks/
-│   ├── styles/
+│   ├── App.css/
+│   ├── asset
 │   ├── App.tsx
-│   ├── index.tsx
+│   ├── index.css
+│   ├── main.tsx
 │   └── ...
+├── index.html
 ├── .gitignore
 ├── package.json
 ├── README.md
 └── tsconfig.json
 ```
+
+- **`components/`**: Contains the React components used in the project.
+- **`Contexts/`**: Contains the API Context for state management.
+- **`App.css/`**: Contains the main stylesheet.
+- **`App.tsx/`**: Main application component.
+- **`asset/`**: Contains static assets like images.
+- **`main.tsx/`**: Entry point of the application.
+
+## Features
+
+### UI Implementation
+
+The UI is implemented based on the Figma design provided [here](https://www.figma.com/design/5YoDO1EKuVGMJK77g2CY43/Blutech-solution?node-id=425-359&t=fCesi5WRWJUPge5L-0).
+
+### API Integration
+
+- The application fetches data from the API endpoint `http://3.88.1.181:8000/products/public/catalog`.
+- The data is managed using API Context and displayed in a data table.
+
+## Setup Instructions
+
+### API Endpoint
+
+The API endpoint used in this project is:
+
+```sh
+http://3.88.1.181:8000/products/public/catalog
+```
+
+## State Management
+
+State is managed using API Context. The context is set up in `src/contexts/`.
+
+## Styling
+
+CSS and Bootstrap are used for styling. Styles are located in `src/App.css`, `src/index.css.` and inline
+
+## Deployment
+
+To create a production build, run:
+
+```sh
+npm run build
+# or
+yarn build
+```
+
+## Repository
+
+The public repository for this project can be found [here](https://github.com/Rengkat/Blutech-Solutions-Front-End-Engineer-Test-Project.git).
+
+## Contact
+
+If you have any questions or need further assistance, please contact me at alexrengkat@gmail.com or +2348067581175.
