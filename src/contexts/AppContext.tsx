@@ -1,12 +1,24 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useEffect, useReducer, ReactNode } from "react";
 import Reducer from "./Reducer";
-export const AppContext = createContext();
-const initialState = {
+
+interface AppContextState {
+  products: any[];
+  loading: boolean;
+  error: boolean;
+}
+
+interface AppContextProviderProps {
+  children: ReactNode;
+}
+export const AppContext = createContext<AppContextState | undefined>(undefined);
+
+const initialState: AppContextState = {
   products: [],
   loading: false,
   error: false,
 };
-const AppContextProvider = ({ children }) => {
+
+const AppContextProvider = ({ children }: AppContextProviderProps) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
   const fetchProducts = async () => {
     dispatch({ type: "LOADING", payload: true });
