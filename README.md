@@ -33,7 +33,38 @@ Make sure you have the following installed:
 2. **Install dependencies**:
 
 ```sh
-4. npm install
+npm install
 # or
 yarn install
+```
+
+## Running the Project
+
+1. **Start the development server:**
+
+```sh
+   npm start
+   # or
+   yarn start
+```
+
+2. Open your browser and navigate to http://localhost:3000 to view the application.
+
+## Project Structure
+
+```sh
+blutech-project/
+├── public/
+├── src/
+│   ├── components/
+│   ├── contexts/
+│   ├── hooks/
+│   ├── styles/
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── ...
+├── .gitignore
+├── package.json
+├── README.md
+└── tsconfig.json
 ```
