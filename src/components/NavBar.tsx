@@ -3,10 +3,15 @@ import { IoIosNotifications } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
+import { IoMenu } from "react-icons/io5";
+import SideBar from "./SideBar";
 const NavBar = () => {
   return (
     <div className="nav-container">
       <nav>
+        <div className="menu">
+          <IoMenu />
+        </div>
         <img className="logo" src={logo} alt="" />
         <div className="search-input-container">
           <CiSearch className="search-icon" />{" "}
@@ -25,6 +30,7 @@ const NavBar = () => {
           </div>
         </div>
       </nav>
+      {/* <SideBar /> */}
     </div>
   );
 };

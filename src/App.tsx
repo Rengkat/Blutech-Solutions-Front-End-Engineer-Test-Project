@@ -4,6 +4,7 @@ import SharedRoute from "./components/SharedRoute";
 import Department from "./pages/Dashboard/Department";
 import Login from "./pages/Auth/Login";
 import NotFound from "./pages/NotFound";
+import Others from "./pages/Others/Others";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SharedRoute />}>
           <Route index element={<Department />} />
+          <Route path="/others" element={<Others />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
