@@ -1,60 +1,52 @@
-/* Small Screens and Below */
-@media (max-width: 600px) {
-  .heading {
-    padding: 0.5rem 1rem;
-  }
-  .table-heading {
-    background: #f0f4fe;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    font-size: 0.6rem;
-    padding: 0.5rem 0.2rem 0.5rem 1rem;
-    margin-top: 1rem;
-  }
-  .table-body {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    background: #ffffff;
-    font-size: 0.4rem;
-    padding-top: 1rem;
-    padding-left: 1rem;
-  }
-  .product-image {
-    width: 50%;
-  }
-  .table-body > div {
-    border-bottom: 1px solid #e3e3e3;
-    padding: 5px 0;
-  }
+.heading {
+  padding: 0.5rem 1rem;
+}
+.table-heading {
+  background: #f0f4fe;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  font-size: 0.6rem;
+  padding: 0.5rem 0.2rem 0.5rem 1rem;
+  margin-top: 1rem;
+}
+.table-body {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  background: #ffffff;
+  font-size: 0.4rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+.product-image {
+  width: 50%;
+}
+.table-body > div {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 5px 0;
 }
 
 /* Medium Screens Only */
 @media (min-width: 601px) and (max-width: 1024px) {
-  .heading {
-    padding: 0.5rem 1rem;
-  }
   .table-heading {
-    background: #f0f4fe;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    font-size: 0.6rem;
-    padding: 0.5rem 0.2rem;
-    margin-top: 1rem;
+    border-radius: 5px;
+  }
+  .table-body {
+    font-size: 0.5rem;
+    border-radius: 5px;
+  }
+  .product-image {
+    width: 40%;
   }
 }
 
 /* Large Screens Only */
 @media (min-width: 1025px) and (max-width: 1440px) {
-  .heading {
-    padding: 0.5rem 1rem;
-  }
-  .table-heading {
-    background: #f0f4fe;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
+  .table-body {
     font-size: 0.6rem;
-    padding: 0.5rem 0.2rem;
-    margin-top: 1rem;
+    border-radius: 5px;
+  }
+  .product-image {
+    width: 40%;
   }
 }
 
@@ -64,11 +56,14 @@
     padding: 1rem 3.5rem;
   }
   .table-heading {
-    background: #f0f4fe;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
     font-size: 1rem;
     padding: 1rem 1rem;
-    margin-top: 1rem;
+  }
+  .table-body {
+    font-size: 0.7rem;
+    border-radius: 5px;
+  }
+  .product-image {
+    width: 30%;
   }
 }

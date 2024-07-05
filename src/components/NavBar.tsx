@@ -4,12 +4,14 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { IoMenu } from "react-icons/io5";
-import SideBar from "./SideBar";
+import { useContext } from "react";
+import { AppContext } from "../contexts/AppContext";
 const NavBar = () => {
+  const { closeSideBar, isMenuOpen, user } = useContext(AppContext);
   return (
     <div className="nav-container">
       <nav>
-        <div className="menu">
+        <div onClick={() => closeSideBar()} className="menu">
           <IoMenu />
         </div>
         <img className="logo" src={logo} alt="" />
@@ -25,7 +27,7 @@ const NavBar = () => {
           <div className="profile-nav">
             <FaRegUserCircle style={{ fontSize: "1.2rem" }} />
 
-            <h5>Name</h5>
+            <h5 style={{ textTransform: "capitalize" }}>{user?.username}</h5>
             <MdKeyboardArrowDown />
           </div>
         </div>

@@ -1,0 +1,43 @@
+.form-container {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  width: 80%;
+}
+input {
+  padding: 10px 7px;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #b3b3b3;
+}
+button {
+  background-color: #008cff;
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  color: #ffffff;
+  font-size: large;
+}
+/* Medium Screens Only */
+@media (min-width: 601px) and (max-width: 1024px) {
+  form {
+    width: 40%;
+  }
+}
+
+/* Large Screens Only */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  form {
+    width: 30%;
+  }
+}
+
+/* Mega Screens Above */
+@media (min-width: 1441px) {
+  form {
+    width: 20%;
+  }
+}

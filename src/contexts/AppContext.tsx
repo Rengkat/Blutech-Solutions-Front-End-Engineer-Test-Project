@@ -1,13 +1,20 @@
 import { createContext, useEffect, useReducer, ReactNode } from "react";
 import Reducer from "./Reducer";
 import { products } from "../unilities/helper";
-
+import { addUserToLocalStorage, getUserFromLocalStorage } from "./localStorage";
+interface User {
+  username: string;
+  password: string;
+}
 interface AppContextState {
   products: any[];
   loading: boolean;
   error: boolean;
   isMenuOpen: boolean;
   openSideBar: () => void;
+  closeSideBar: () => void;
+  login: (user: User) => void;
+  user: User | null;
 }
 
 interface AppContextProviderProps {
@@ -20,6 +27,9 @@ const initialState: AppContextState = {
   error: false,
   isMenuOpen: false,
   openSideBar: () => {},
+  closeSideBar: () => {},
+  login: () => {},
+  user: getUserFromLocalStorage(),
 };
 export const AppContext = createContext<AppContextState>(initialState);
 
@@ -49,8 +59,18 @@ const AppContextProvider = ({ children }: AppContextProviderProps) => {
   const openSideBar = () => {
     dispatch({ type: "OPEN_MENU", payload: true });
   };
-
-  return <AppContext.Provider value={{ ...state, openSideBar }}>{children}</AppContext.Provider>;
+  const closeSideBar = () => {
+    dispatch({ type: "CLOSE_MENU", payload: false });
+  };
+  const login = (user: User) => {
+    dispatch({ type: "LOGIN", payload: user });
+    addUserToLocalStorage(user);
+  };
+  return (
+    <AppContext.Provider value={{ ...state, openSideBar, closeSideBar, login }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export default AppContextProvider;
