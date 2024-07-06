@@ -87,6 +87,16 @@ nav {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  position: relative;
+}
+.logout-btn {
+  position: absolute;
+  top: 100%;
+  background: #00aaff;
+  text-align: center;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 3px;
 }
 .profile-icon {
   font-size: 1.8rem;
