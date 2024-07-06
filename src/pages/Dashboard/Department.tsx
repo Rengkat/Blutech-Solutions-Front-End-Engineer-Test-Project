@@ -4,7 +4,7 @@ import "./Style.css";
 import { AppContext } from "../../contexts/AppContext";
 import { useOutletContext } from "react-router-dom";
 const Department = () => {
-  const { products, loading, error } = useContext(AppContext);
+  const { loading, error } = useContext(AppContext);
   const { searchedProducts } = useOutletContext<any>();
   console.log(searchedProducts);
   if (loading) {

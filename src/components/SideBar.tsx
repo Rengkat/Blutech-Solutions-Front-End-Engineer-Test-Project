@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import { MdClose, MdOutlineTraffic } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 const SideBar = () => {

@@ -11,7 +11,7 @@ interface Props {
   setSearch: (value: string) => void;
 }
 const NavBar = ({ search, setSearch }: Props) => {
-  const { closeSideBar, isMenuOpen, user } = useContext(AppContext);
+  const { closeSideBar, user } = useContext(AppContext);
   return (
     <div className="nav-container">
       <nav>

@@ -3,11 +3,7 @@ import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../contexts/AppContext";
-import { Product } from "../unilities/helper";
-interface ProductsContextType {
-  SearchedProducts: Product[];
-  SetSearchProducts: (products: Product[]) => void;
-}
+
 const SharedRoute = () => {
   const { isMenuOpen, products } = useContext(AppContext);
   const [search, setSearch] = useState("");
