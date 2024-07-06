@@ -14,73 +14,89 @@
 .nav-container {
   width: 100%;
   background: #ffffff;
+
+  /* background: #ffffff; */
   position: fixed;
+  z-index: 5;
   top: 0;
   left: 0;
   right: 0;
+  /* margin-bottom: 3rem; */
 }
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
+}
+.menu-logo-search-flex {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
 }
 .menu {
-  width: 5%;
-  display: flex;
-  justify-content: start;
-  font-size: xx-large;
+  font-size: 2.2rem;
+  width: 2rem;
+  cursor: pointer;
 }
 .logo {
-  width: 20%;
+  width: 6rem;
   display: none;
 }
-.search-input-container {
-  width: 40%;
+.search-container {
+  display: flex;
+  height: 2rem;
   display: none;
-  border: 1px solid gray;
-  padding: 3px;
-  border-radius: 5px;
 }
-.search-icon {
-  width: 30%;
+.search-input {
+  display: flex;
 }
 .search {
-  margin-left: -1rem;
-  width: 70%;
-  border: none;
-  outline: none;
+  padding: 5px 7px;
 }
 .inner-nav {
-  width: 8rem;
+  width: 50%;
   display: flex;
-  gap: 1rem;
-  justify-content: end;
   align-items: center;
+  justify-content: flex-end;
 }
+
 .notification {
-  width: 2rem;
-  font-size: 1.2rem;
+  display: flex;
   position: relative;
+  width: 30%;
+}
+.notification-icon {
+  font-size: 1.2rem;
+  color: gray;
+  float: right;
+  margin-left: 2rem;
 }
 .notice {
   position: absolute;
-  top: 3px;
-  right: 5px;
-  background: red;
   width: 0.3rem;
   height: 0.3rem;
+  background: red;
+  top: 3px;
+  right: 20%;
   border-radius: 50%;
 }
 .profile-nav {
+  width: 50%;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.profile-icon {
+  font-size: 1.8rem;
+  color: gray;
 }
 .main {
   display: flex;
   margin-top: 1rem;
 }
+
 .sideBar {
   display: flex;
   position: absolute;
@@ -135,19 +151,31 @@ nav {
 }
 .outlet {
   width: 100%;
+  margin-top: 5rem;
   padding: 0.5rem 0;
 }
 
 /* Medium Screens Only */
 @media (min-width: 601px) and (max-width: 1024px) {
-  .menu {
-    display: block;
+  .notification {
+    width: 2rem;
   }
-  .logo {
-    display: none;
+  .notification-icon {
+    font-size: 1.5rem;
+    margin-left: 0rem;
+  }
+  .notice {
+    right: 24%;
+  }
+  .profile-nav {
+    width: 35%;
   }
   .inner-sideBar {
     width: 30%;
+  }
+  .name {
+    color: gray;
+    font-size: 1.2rem;
   }
   .search-input-container {
     display: flex;
@@ -161,25 +189,36 @@ nav {
 }
 /* Large Screens Only */
 @media (min-width: 1025px) and (max-width: 1440px) {
-  .logo {
-    width: 15%;
+  nav {
+    padding: 1rem 2rem;
   }
-  .search-input-container {
-    width: 25%;
-    display: flex;
-    border: 1px solid gray;
+
+  .menu-logo-search-flex {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
   }
+
   .menu {
-    display: none;
+    font-size: 2.6rem;
+    width: 4rem;
   }
-  .logo {
-    display: block;
+  .profile-nav {
+    width: 30%;
   }
-  .search-input-container {
-    display: flex;
+  .notification {
+    width: 2rem;
   }
-  .sideBar {
-    display: none;
+  .notification-icon {
+    font-size: 1.5rem;
+    margin-left: 0rem;
+  }
+  .name {
+    color: gray;
+    font-size: 1.2rem;
+  }
+  .notice {
+    right: 23%;
   }
   .outlet {
     padding: 0.5rem 1rem;
@@ -189,31 +228,58 @@ nav {
 /* Mega Screens Above */
 @media (min-width: 1441px) {
   nav {
-    padding: 0.5rem 3rem;
+    padding: 1.5rem 5rem;
+  }
+
+  .menu-logo-search-flex {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+  }
+  .search-container {
+    display: block;
+    border: 1px gray solid;
+    width: 40%;
+    border-radius: 5px;
+  }
+
+  .search-icon {
+    margin-top: 0.4rem;
+    width: 30%;
+    font-size: 1.5rem;
+  }
+
+  .search {
+    border: none;
+    outline: none;
+    padding: 6px 2px;
   }
   .menu {
     display: none;
   }
+  .inner-nav {
+    gap: 1rem;
+  }
+  .profile-nav {
+    width: 20%;
+  }
+  .notification {
+    width: 2rem;
+  }
+  .notification-icon {
+    font-size: 1.5rem;
+    margin-left: 0rem;
+  }
+  .notice {
+    right: 25%;
+  }
   .logo {
-    width: 15%;
+    width: 10rem;
     display: block;
   }
-
-  .search-input-container {
-    width: 15rem;
-    display: flex;
-  }
-  .sideBar {
-    display: flex;
-    position: absolute;
-    width: 15%;
-    height: 100vh;
-    background: #00000061;
-    z-index: 10;
-    inset: 0;
-    z-index: 10;
-    transform: translateX(0%);
-    transition: all 0.3s linear;
+  .name {
+    color: gray;
+    font-size: 1.2rem;
   }
   .inner-sideBar {
     width: 100%;

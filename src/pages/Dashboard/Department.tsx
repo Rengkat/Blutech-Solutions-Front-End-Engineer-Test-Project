@@ -2,8 +2,11 @@ import { Fragment, useContext } from "react";
 import { Product, TableHeading } from "../../unilities/helper";
 import "./Style.css";
 import { AppContext } from "../../contexts/AppContext";
+import { useOutletContext } from "react-router-dom";
 const Department = () => {
   const { products, loading, error } = useContext(AppContext);
+  const { searchedProducts } = useOutletContext<any>();
+  console.log(searchedProducts);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -20,12 +23,12 @@ const Department = () => {
         ))}
       </div>
       <div className="table-body">
-        {products.map((product: Product, i) => {
+        {searchedProducts.map((product: Product, i: number) => {
           return (
             <Fragment key={product.sku}>
-              <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                <input type="checkbox" style={{ width: "8px" }} />
-                <span>{i + 1}</span>
+              <div className="firstLine">
+                <input type="checkbox" />
+                <span style={{ marginLeft: "0.5rem" }}>{i + 1}</span>
               </div>
               <div>
                 <img className="product-image" src={product.image} alt={product.name} />

@@ -6,29 +6,43 @@ import { CiSearch } from "react-icons/ci";
 import { IoMenu } from "react-icons/io5";
 import { useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
-const NavBar = () => {
+interface Props {
+  search: string;
+  setSearch: (value: string) => void;
+}
+const NavBar = ({ search, setSearch }: Props) => {
   const { closeSideBar, isMenuOpen, user } = useContext(AppContext);
   return (
     <div className="nav-container">
       <nav>
-        <div onClick={() => closeSideBar()} className="menu">
-          <IoMenu />
-        </div>
-        <img className="logo" src={logo} alt="" />
-        <div className="search-input-container">
-          <CiSearch className="search-icon" />{" "}
-          <input className="search" type="text" placeholder="Search by patients..." />
+        <div className="menu-logo-search-flex">
+          <IoMenu onClick={() => closeSideBar()} className="menu" />
+
+          <img className="logo" src={logo} alt="logo" />
+
+          <div className="search-container">
+            <div className="search-input">
+              <CiSearch className="search-icon" />{" "}
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="search"
+                type="text"
+                placeholder="Search by patients..."
+              />
+            </div>
+          </div>
         </div>
         <div className="inner-nav">
           <div className="notification">
-            <IoIosNotifications style={{ color: "gray" }} />
+            <IoIosNotifications className="notification-icon" />
             <div className="notice"></div>
           </div>
           <div className="profile-nav">
-            <FaRegUserCircle style={{ fontSize: "1.2rem" }} />
+            <FaRegUserCircle className="profile-icon" />
 
-            <h5 style={{ textTransform: "capitalize" }}>{user?.username}</h5>
-            <MdKeyboardArrowDown />
+            <h5 className="name">{user?.username}</h5>
+            <MdKeyboardArrowDown className="profile-icon" />
           </div>
         </div>
       </nav>

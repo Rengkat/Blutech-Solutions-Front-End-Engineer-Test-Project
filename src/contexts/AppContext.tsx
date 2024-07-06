@@ -1,6 +1,7 @@
 import { createContext, useEffect, useReducer, ReactNode } from "react";
 import Reducer from "./Reducer";
 import { products } from "../unilities/helper";
+import Products from "../../products.json";
 import { addUserToLocalStorage, getUserFromLocalStorage } from "./localStorage";
 interface User {
   username: string;
@@ -25,7 +26,7 @@ const initialState: AppContextState = {
   products: [],
   loading: false,
   error: false,
-  isMenuOpen: false,
+  isMenuOpen: true,
   openSideBar: () => {},
   closeSideBar: () => {},
   login: () => {},
@@ -35,7 +36,7 @@ export const AppContext = createContext<AppContextState>(initialState);
 
 const AppContextProvider = ({ children }: AppContextProviderProps) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
-
+  console.log(Products);
   const fetchProducts = async () => {
     dispatch({ type: "LOADING", payload: true });
     try {
